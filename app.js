@@ -1,38 +1,34 @@
-//Movement Animation to happen
-const card = document.querySelector(".card");
-const container = document.querySelector(".container");
-//Items
-const title = document.querySelector(".title");
-const sneaker = document.querySelector(".sneaker img");
-const purchase = document.querySelector(".purchase");
-const description = document.querySelector(".info h3");
-const sizes = document.querySelector(".sizes");
+//  Credits 
+//  Inspired by Dev Ed https://github.com/developedbyed/3d-card-effect & https://youtu.be/XK7T3mY1V-w 
 
-//Moving Animation Event
-container.addEventListener("mousemove", (e) => {
-  let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-  let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
 
-//Animate In
-container.addEventListener("mouseenter", (e) => {
-  card.style.transition = "none";
-  //Popout
-  title.style.transform = "translateZ(150px)";
-  sneaker.style.transform = "translateZ(200px) rotateZ(-45deg)";
-  description.style.transform = "translateZ(125px)";
-  sizes.style.transform = "translateZ(100px)";
-  purchase.style.transform = "translateZ(75px)";
-});
-//Animate Out
-container.addEventListener("mouseleave", (e) => {
-  card.style.transition = "all 0.5s ease";
-  card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-  //Popback
-  title.style.transform = "translateZ(0px)";
-  sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
-  description.style.transform = "translateZ(0px)";
-  sizes.style.transform = "translateZ(0px)";
-  purchase.style.transform = "translateZ(0px)";
+jQuery(document).ready(function ($) {
+  //Items
+  var $card = $(".card");
+  var $container = $(".container");
+  var $title = $(".title");
+  var $bike = $(".bike img");
+  var $purchase = $(".purchase");
+  var $description = $(".info h3");
+
+  //Moving Animation Event
+  $container.on("mousemove", function (e) {
+    let xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+    let yAxis = (window.innerHeight / 2 - e.clientY) / 25;
+    $card.css("transform", `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`);
+  });
+
+  //Animate on Hover
+  $container.hover(function () {
+    $card.toggleClass("has-transform");
+    $title.toggleClass("has-transform");
+    $bike.toggleClass("has-transform");
+    $purchase.toggleClass("has-transform");
+    $description.toggleClass("has-transform");
+  });
+
+  //Pop Back on mouseleave
+  $container.on("mouseleave", function () {
+    $card.css("transform", `rotateY(0deg) rotateX(0deg)`);
+  });
 });

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,93 +5,112 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1000px;
+  position: relative;
 }
 .container {
-  width: 50%;
+  position: relative;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.75s ease-out;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 .card {
-  transform-style: preserve-3d;
-  min-height: 80vh;
-  width: 35rem;
+  transition: all 0.75s;
+  max-width: 700px;
   border-radius: 30px;
-  padding: 0rem 5rem;
+  padding: 2vh 5%;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
-.sneaker {
-  min-height: 35vh;
+.bike {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
-.sneaker img {
-  width: 20rem;
+.bike img {
+  width: 80%;
   z-index: 2;
   transition: all 0.75s ease-out;
 }
 .circle {
-  width: 15rem;
-  height: 15rem;
-  background: linear-gradient(
-    to right,
-    rgba(245, 70, 66, 0.75),
-    rgba(8, 83, 156, 0.75)
-  );
+  width: 150px;
+  width: clamp(100px, 10vw, 150px);
+  height: 150px;
+  height: clamp(100px, 10vw, 150px);
+  background: linear-gradient(to right, #443763, #ea3900);
   position: absolute;
   border-radius: 50%;
   z-index: 1;
 }
 
+.info {
+  text-align: center;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
 .info h1 {
-  font-size: 3rem;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05em;
+  color: #443763;
+  font-size: 45px;
+  font-size: clamp(45px, 8vw, 75px);
   transition: all 0.75s ease-out;
+  margin-bottom: 5vh;
+  transform-style: preserve-3d;
 }
 .info h3 {
-  font-size: 1.3rem;
-  padding: 2rem 0rem;
+  font-size: 24px;
+  font-size: clamp(18px, 2vw, 24px);
+  margin-bottom: 7vh;
   color: #585858;
   font-weight: lighter;
   transition: all 0.75s ease-out;
 }
-.sizes {
-  display: flex;
-  justify-content: space-between;
-  transition: all 0.75s ease-out;
-}
-.sizes button {
-  padding: 0.5rem 2rem;
-  background: none;
-  border: none;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #585858;
-}
-button.active {
-  background: #585858;
-  color: white;
-}
 .purchase {
-  margin-top: 5rem;
+  margin-bottom: 5vh;
   transition: all 0.75s ease-out;
 }
 .purchase button {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.1em;
   width: 100%;
-  padding: 1rem 0rem;
-  background: #f54642;
+  max-width: 400px;
+  font-size: clamp(18px, 3vw, 25px);
+  padding: 0.8em 3em;
+  background: #443763;
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 30px;
   font-weight: bolder;
+}
+.card.has-transform {
+  transition: all 100ms linear;
+}
+.title.has-transform {
+  transform: translateZ(150px) !important;
+}
+.bike img.has-transform {
+  transform: translateZ(200px) rotateZ(10deg) !important;
+}
+.info h3.has-transform {
+  transform: translateZ(125px) !important;
+}
+.purchase.has-transform {
+  transform: translateZ(150px) rotateX(20deg) !important;
 }
