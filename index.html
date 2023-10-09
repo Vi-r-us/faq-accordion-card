@@ -8,54 +8,76 @@
   <title>FAQ Accordion Card</title>
 
   <link rel="stylesheet" href="styles/default.css">
-  <link rel="stylesheet" href="styles/temp.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- <link rel="stylesheet" href="styles/temp.css"> -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  <!-- Temporary to test 3d functionality -->
-  <div class="container">
-    <div class="card">
-      <div class="bike">
-        <div class="circle"></div>
-        <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2021/04/bike-repair-35-1.png" alt="image">
-      </div>
-      <div class="info">
-        <h1 class="title">The <span style="color: #ea3900;">Divi</span> Bike</h1>
-        <h3><strong>The One and Only</strong></br>(Get it while you can)</h3>
-        <div class="purchase">
-          <button>Make an Offer</button>
+  <main>
+    <div class="card flex">
+
+      <section>
+        <div class="image-container">
+          <picture class="box-img">
+            <source srcset="images/illustration-box-desktop.svg" media="(min-width: 72.5rem)">
+            <img alt="box image">
+          </picture>
+          <picture class="platform-img">
+            <source srcset="images/illustration-woman-online-desktop.svg" media="(min-width: 72.5rem)">
+            <img src="images/illustration-woman-online-mobile.svg" alt="platform image">
+          </picture>
+          <picture class="platform-shadow-img">
+            <img src="images/bg-pattern-mobile.svg" alt="platform shadow image">
+          </picture>
         </div>
-      </div>
+      </section>
+
+      <section class="faq-container flex">
+        <h1>FAQ</h1>
+        <div class="questions-list flex">
+          <div class="question">
+            <p class="ques">How many team members can I invite?</p>
+            <div class="hidden">
+              <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+                team members for the Premium plan.</p>
+            </div>
+          </div>
+          <div class="question">
+            <p class="ques">What is the maximum file upload size?</p>
+            <div class="hidden">
+              <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+            </div>
+          </div>
+          <div class="question">
+            <p class="ques">How do I reset my password?</p>
+            <div class="hidden">
+              <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.</p>
+            </div>
+          </div>
+          <div class="question">
+            <p class="ques">Can I cancel my subscription?</p>
+            <div class="hidden">
+              <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+            </div>
+          </div>
+          <div class="question">
+            <p class="ques">Do you provide additional support?</p>
+            <div class="hidden">
+              <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-  <!-- How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
+    <div class="attribution">
+      Coded by <a href="#">Sahil</a>.
+    </div>
+  </main>
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
-
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
-
-  <!-- <div class="attribution"> 
-    Coded by <a href="#">Sahil</a>.
-  </div> -->
 </body>
 
 <script src="app.js"></script>
