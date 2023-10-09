@@ -21,8 +21,14 @@
 
 
 /* General CSS */
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
+}
 body {
-  min-height: 100dvh;
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
 
   background: linear-gradient(
     180deg, 
